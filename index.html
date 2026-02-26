@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming a CSS file for UI design -->
+    <title>BWEB Frontend</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to BWEB</h1>
+        <nav>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#sellers">Sellers</a></li>
+                <li><a href="#ai-coworker">AI Coworker</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="products"></section>
+        <section id="orders"></section>
+        <section id="sellers"></section>
+        <section id="ai-coworker"></section>
+    </main>
+    <script>
+        const apiUrl = 'https://bweb-backend-production.up.railway.app';
+
+        async function fetchProducts() {
+            const response = await fetch(`${apiUrl}/products`);
+            const products = await response.json();
+            // Render products in HTML
+        }
+
+        async function fetchOrders() {
+            const response = await fetch(`${apiUrl}/orders`);
+            const orders = await response.json();
+            // Render orders in HTML
+        }
+
+        async function fetchSellers() {
+            const response = await fetch(`${apiUrl}/sellers`);
+            const sellers = await response.json();
+            // Render sellers in HTML
+        }
+
+        // Authentication and other features can be added here
+
+        // Call fetch functions on page load
+        window.onload = function() {
+            fetchProducts();
+            fetchOrders();
+            fetchSellers();
+        };
+    </script>
+</body>
+</html>
